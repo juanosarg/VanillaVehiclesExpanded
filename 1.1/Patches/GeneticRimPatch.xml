@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Genetic Rim</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<RecipeDef>
+							<defName>GR_ExtractCarGenes</defName>
+							<label>extract genes from a car (??)</label>
+							<description>Extract genetic material from a car.</description>
+							<jobString>Extracting Genetic Material</jobString>
+							<effectWorking>Cremate</effectWorking>
+							<soundWorking>Recipe_Cremate</soundWorking>
+							<workAmount>500</workAmount>
+							<workSkill>Intellectual</workSkill>
+							<recipeUsers>
+								<li>GR_GeneticExtractionTable</li>	  
+							</recipeUsers>	
+							<ingredients>
+								<li>
+									<filter>
+
+										<thingDefs>
+											<li>Corpse_VAEAF_CarForklift</li>
+											<li>Corpse_VAEAF_CarPickup</li>
+											<li>Corpse_VAEAF_CarVintage</li>
+											<li>Corpse_VAEAF_CarDelivery</li>
+											<li>Corpse_VAEAF_CarFamily</li>
+										</thingDefs>
+									</filter>
+									<count>1</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+
+								<thingDefs>
+									<li>Corpse_VAEAF_CarForklift</li>
+									<li>Corpse_VAEAF_CarPickup</li>
+									<li>Corpse_VAEAF_CarVintage</li>
+									<li>Corpse_VAEAF_CarDelivery</li>
+									<li>Corpse_VAEAF_CarFamily</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<GR_CarGenetic>1</GR_CarGenetic>
+							</products>
+							<skillRequirements>
+								<Intellectual>8</Intellectual>
+							</skillRequirements>
+						</RecipeDef>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="GR_GeneticsBase">
+							<defName>GR_CarGenetic</defName>
+							<label>car genetic material</label>
+							<description>A vial of genetic material extracted from a car.</description>
+
+							<graphicData>
+								<texPath>Things/Item/VAEAF_GeneticMaterialsCar</texPath>
+
+							</graphicData>
+							<statBases>
+								<MarketValue>45</MarketValue>
+							</statBases>
+
+						</ThingDef>
+
+					</value>
+				</li>
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+
+						<ThingDef Abstract="True" Name="GR_IncubatorsBaseCar" ParentName="GR_IncubatorsBase">
+							<graphicData>
+								<texPath>Things/Item/VAEAF_CarIncubator</texPath>
+							</graphicData>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="GR_IncubatorsBaseCar">
+							<defName>GR_ChickencarIncubator</defName>
+							<label>chickencar incubator</label>
+							<description>This incubator has to be kept at a temperature between 0 and 50 degrees Celsius until the genetically modified organism is ready to hatch. The embryo will develop into a chicken-car hybrid</description>
+							<comps>
+								<li Class="NewHatcher.CompProperties_Incubator">
+									<hatcherDaystoHatch>1</hatcherDaystoHatch>
+									<hatcherPawn>GR_Chickencar</hatcherPawn>
+								</li>
+							</comps>
+						</ThingDef>
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<RecipeDef>
+							<defName>GR_CreateChickencarIncubator</defName>
+							<label>chickencar incubator</label>
+							<description>Fill an incubator with genes from a chicken and a car</description>
+							<jobString>Filling Incubator</jobString>
+							<effectWorking>Cremate</effectWorking>
+							<soundWorking>Recipe_Cremate</soundWorking>
+							<workAmount>500</workAmount>
+							<recipeUsers>
+
+								<li>GR_GenePod</li>	
+								<li>GR_AdvancedGenePod</li>	  				
+							</recipeUsers>	
+							<ingredients>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>GR_EmptyIncubator</li>
+										</thingDefs>
+									</filter>
+									<count>1</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>GR_CarGenetic</li>
+										</thingDefs>
+									</filter>
+									<count>1</count>
+								</li>
+								<li>
+									<filter>
+										<thingDefs>
+											<li>GR_ChickenGenetic</li>
+										</thingDefs>
+									</filter>
+									<count>1</count>
+								</li>
+							</ingredients>
+							<fixedIngredientFilter>
+
+								<thingDefs>
+									<li>GR_EmptyIncubator</li>
+									<li>GR_CarGenetic</li>
+									<li>GR_ChickenGenetic</li>
+								</thingDefs>
+							</fixedIngredientFilter>
+							<products>
+								<GR_ChickencarIncubator>1</GR_ChickencarIncubator>
+							</products>
+
+							<skillRequirements>
+								<Intellectual>5</Intellectual>
+							</skillRequirements>
+						</RecipeDef>
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="AnimalThingBase">
+							<defName>GR_Chickencar</defName>
+							<label>chickencar</label>
+							<description>A chicken / car hybrid. Apparently you were too busy thinking that you could, without stopping for a while and thinking whether you should . \n\nUseful abilities: Zooooom, there it goes!.</description>
+							<statBases>
+								<MoveSpeed>15</MoveSpeed>
+								<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+								<MarketValue>115</MarketValue>
+								<LeatherAmount>0</LeatherAmount>
+							</statBases>
+							<tools>
+								<li>
+									<label>claws</label>
+									<capacities>
+										<li>Scratch</li>
+									</capacities>
+									<power>2</power>
+									<cooldownTime>1.65</cooldownTime>
+									<linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
+								</li>
+								<li>
+									<capacities>
+										<li>Bite</li>
+									</capacities>
+									<power>5</power>
+									<cooldownTime>1.65</cooldownTime>
+									<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+								</li>
+								<li>
+									<label>head</label>
+									<capacities>
+										<li>Blunt</li>
+									</capacities>
+									<power>1</power>
+									<cooldownTime>1.65</cooldownTime>
+									<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+									<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+									<chanceFactor>0.2</chanceFactor>
+								</li>
+							</tools>
+
+							<comps>
+								<li Class="CompProperties_EggLayer">
+									<eggUnfertilizedDef>VAEAF_ChickencarEggUnfertilized</eggUnfertilizedDef>
+									<eggFertilizedDef>VAEAF_ChickencarEggFertilized</eggFertilizedDef>
+									<eggFertilizationCountMax>1</eggFertilizationCountMax>
+									<eggLayIntervalDays>2</eggLayIntervalDays>
+									<eggCountRange>1</eggCountRange>
+								</li>
+								<li Class="DraftingPatcher.CompProperties_Draftable">
+									<chickenRimPox>true</chickenRimPox>
+									<stampede>true</stampede>
+
+								</li>
+							</comps>
+							<race>
+								<fleshType>GR_Normal</fleshType>
+
+								<thinkTreeMain>GR_DraftableAnimal</thinkTreeMain>
+								<body>GR_BirdWithTeeth</body>
+								<baseHungerRate>0.45</baseHungerRate>
+								<baseBodySize>0.25</baseBodySize>
+								<baseHealthScale>0.5</baseHealthScale>
+								<foodType>VegetarianRoughAnimal</foodType>
+								<trainability>None</trainability>
+								<wildness>0.36</wildness>
+								<useLeatherFrom>Chicken</useLeatherFrom>
+								<useMeatFrom>Chicken</useMeatFrom>
+								<gestationPeriodDays>8</gestationPeriodDays>
+								<mateMtbHours>9</mateMtbHours>
+								<litterSizeCurve>
+									<points>
+										<li>(0.99, 0)</li>
+										<li>(1, 1)</li>
+										<li>(1.01, 0)</li>
+									</points>
+								</litterSizeCurve>
+								<lifeExpectancy>8</lifeExpectancy>
+								<lifeStageAges>
+									<li>
+										<def>AnimalBabyTiny</def>
+										<minAge>0</minAge>
+										<soundWounded>Pawn_Chick_Call</soundWounded>
+										<soundDeath>Pawn_Chick_Call</soundDeath>
+										<soundCall>Pawn_Chick_Call</soundCall>
+										<soundAngry>Pawn_Chick_Call</soundAngry>
+									</li>
+									<li>
+										<def>AnimalJuvenile</def>
+										<minAge>0.12</minAge>
+									</li>
+									<li>
+										<def>AnimalAdult</def>
+										<minAge>0.3</minAge>
+										<soundWounded>Pawn_Chicken_Wounded</soundWounded>
+										<soundDeath>Pawn_Chicken_Death</soundDeath>
+										<soundCall>Pawn_Chicken_Call</soundCall>
+										<soundAngry>Pawn_Chicken_Angry</soundAngry>
+									</li>
+								</lifeStageAges>
+								<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+								<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+								<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+							</race>
+							<tradeTags>
+								<li>AnimalGenetic</li>
+							</tradeTags>
+						</ThingDef>
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<PawnKindDef ParentName="AnimalKindBase">
+
+							<defName>GR_Chickencar</defName>
+							<label>chickencar</label>
+							<race>GR_Chickencar</race>
+							<combatPower>35</combatPower>
+							<canArriveManhunter>false</canArriveManhunter>
+							<ecoSystemWeight>1</ecoSystemWeight>
+							<labelMale>chickencar rooster</labelMale>
+							<labelFemale>chickencar hen</labelFemale>
+							<lifeStages>
+								<li>
+									<label>chickencar chick</label>
+									<bodyGraphicData>
+										<texPath>Things/Pawn/Animal/GR_Chickencar/GR_Chickencar</texPath>
+										<drawSize>0.55</drawSize>
+
+									</bodyGraphicData>
+									<dessicatedBodyGraphicData>
+										<texPath>Things/Pawn/Animal/GR_Chickencar/GR_Dessicated_Chickencar</texPath>
+										<drawSize>0.55</drawSize>
+									</dessicatedBodyGraphicData>
+								</li>
+								<li>
+									<labelMale>chickencar cockerel</labelMale>
+									<bodyGraphicData>
+										<texPath>Things/Pawn/Animal/GR_Chickencar/GR_Chickencar</texPath>
+										<drawSize>0.85</drawSize>
+										<color>(200,150,85)</color>
+									</bodyGraphicData>
+
+									<dessicatedBodyGraphicData>
+										<texPath>Things/Pawn/Animal/GR_Chickencar/GR_Dessicated_Chickencar</texPath>
+										<drawSize>0.8</drawSize>
+									</dessicatedBodyGraphicData>
+								</li>
+								<li>
+									<bodyGraphicData>
+										<texPath>Things/Pawn/Animal/GR_Chickencar/GR_Chickencar</texPath>
+										<drawSize>0.97</drawSize>
+										<color>(200,150,85)</color>
+										<shadowData>
+											<volume>(0.3, 0.4, 0.3)</volume>
+											<offset>(0,0,-0.05)</offset>
+										</shadowData>
+									</bodyGraphicData>
+
+									<dessicatedBodyGraphicData>
+										<texPath>Things/Pawn/Animal/GR_Chickencar/GR_Dessicated_Chickencar</texPath>
+										<drawSize>0.95</drawSize>
+									</dessicatedBodyGraphicData>
+									<butcherBodyPart>
+										<bodyPartGroup>Teeth</bodyPartGroup>
+										<thing>GR_VerySmallTeeth</thing>
+										<allowFemale>true</allowFemale>
+									</butcherBodyPart>
+								</li>
+							</lifeStages>
+						</PawnKindDef>
+
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="EggUnfertBase">
+							<defName>VAEAF_ChickencarEggUnfertilized</defName>
+							<label>chickencar egg (unfert.)</label>
+							<description>An unfertilized chickencar egg. It can be eaten raw, but it's much, much better cooked.</description>
+							<graphicData>
+								<texPath>Things/Item/EggForklift</texPath>
+								<color>(253,225,139)</color>
+							</graphicData>
+							<statBases>
+								<MarketValue>7.0</MarketValue>
+							</statBases>
+						</ThingDef>
+
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingDef ParentName="EggFertBase">
+							<defName>VAEAF_ChickencarEggFertilized</defName>
+							<label>chickencar egg (fert.)</label>
+							<description>A fertilized chickencar egg. If all goes well, it should hatch into a chickencar. It can be eaten raw, but it's much better cooked.</description>
+							<graphicData>
+								<texPath>Things/Item/EggForklift</texPath>
+								<color>(253,225,139)</color>
+							</graphicData>
+							<statBases>
+								<MarketValue>7.0</MarketValue>
+							</statBases>
+							<comps>
+								<li Class="CompProperties_Hatcher">
+									<hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+									<hatcherPawn>GR_Chickencar</hatcherPawn>
+								</li>
+							</comps>
+						</ThingDef>
+
+					</value>
+				</li>
+
+
+
+
+
+			</operations>
+		</match>
+	</Operation>
+
+
+</Patch>

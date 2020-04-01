@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+<BodyDef>
+    <defName>VAEAF_CarBody</defName>
+    <label>car</label>
+    <corePart>
+      <def>VAEAF_ChassisFrontal</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>VAEAF_FrontGrille</def>
+          <coverage>0.15</coverage>
+          <height>Top</height>
+          <groups>
+                <li>VAEAF_FrontGrilleGroup</li>
+              </groups>
+          <parts>
+            <li>
+              <def>VAEAF_OnBoardComputer</def>
+              <coverage>0.05</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>VAEAF_FrontLights</def>
+              <customLabel>left front lights</customLabel>
+              <coverage>0.08</coverage>
+            </li>
+            <li>
+              <def>VAEAF_FrontLights</def>
+              <customLabel>right front lights</customLabel>
+              <coverage>0.08</coverage>
+            </li>
+            <li>
+              <def>VAEAF_Radio</def>
+               <depth>Inside</depth>
+              <coverage>0.16</coverage>
+            </li>
+           
+            <li>
+              <def>VAEAF_Alarm</def>
+			  <depth>Inside</depth>
+              <coverage>0.08</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>VAEAF_ChassisCentral</def>
+          <coverage>0.31</coverage>
+          <parts>
+            <li>
+              <def>VAEAF_FuelTank</def>
+              <coverage>0.05</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>VAEAF_ChassisRear</def>
+              <coverage>0.8</coverage>
+              <parts>
+                <li>
+                  <def>VAEAF_Motor</def>
+                  <coverage>0.05</coverage>
+                  <depth>Inside</depth>
+                </li>
+                
+              </parts>
+            </li>
+          </parts>
+        </li>
+		<li>
+          <def>VAEAF_Wheel</def>
+		  <customLabel>right front car wheel</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+		</li>
+		<li>
+          <def>VAEAF_Wheel</def>
+		  <customLabel>left front car wheel</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+		</li>
+		<li>
+          <def>VAEAF_Wheel</def>
+		  <customLabel>right rear car wheel</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+		</li>
+		<li>
+          <def>VAEAF_Wheel</def>
+		  <customLabel>left rear car wheel</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+		</li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

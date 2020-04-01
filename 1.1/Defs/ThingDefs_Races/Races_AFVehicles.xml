@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- ======================= Family Car =============================== -->
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VAEAF_CarFamily</defName>
+		<label>family car</label>
+		<description>An ancient peaceful herbivore, Family cars are often seen grazing on the grasslands, calmly minding their own business.\n\nDue to them being completely harmless, ancient tribes tend to hunt them down for their tender... meat.</description>
+		<statBases>
+			<MoveSpeed>4</MoveSpeed>
+			<MarketValue>550</MarketValue>
+			<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+			<ComfyTemperatureMax>50</ComfyTemperatureMax>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tools>
+
+			<li>
+				<label>front grille</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>VAEAF_FrontGrilleGroup</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Milkable">
+				<milkDef>Chemfuel</milkDef>
+				<milkIntervalDays>2</milkIntervalDays>
+				<milkAmount>12</milkAmount>
+				<milkFemaleOnly>false</milkFemaleOnly>
+			</li>
+		</comps>
+		<race>
+			<fleshType>VAEAF_CarFlesh</fleshType>
+			<bloodDef>Filth_MachineBits</bloodDef>
+			<body>VAEAF_CarBody</body>
+			<herdAnimal>true</herdAnimal>
+			<petness>0.025</petness>
+			<meatLabel>car meat</meatLabel>
+			<baseBodySize>1.9</baseBodySize>
+			<baseHungerRate>0.25</baseHungerRate>
+			<baseHealthScale>2</baseHealthScale>
+			<foodType>VegetarianRoughAnimal</foodType>
+			<leatherDef>VAEAP_Leather_Car</leatherDef>
+			<trainability>Intermediate</trainability>
+			<wildness>0.7</wildness>
+			<nameOnTameChance>1</nameOnTameChance>
+			<nuzzleMtbHours>72</nuzzleMtbHours>
+			<manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.20</manhunterOnDamageChance>
+			<wildBiomes>
+				<BorealForest>0.07</BorealForest>
+				<IceSheet>0.02</IceSheet>
+				<Tundra>0.05</Tundra>
+				<ColdBog>0.05</ColdBog>
+				<SeaIce>0.01</SeaIce>
+				<TemperateSwamp>0.03</TemperateSwamp>
+				<TropicalSwamp>0.03</TropicalSwamp>
+				<TemperateForest>0.07</TemperateForest>
+				<TropicalRainforest>0.07</TropicalRainforest>
+				<AridShrubland>0.07</AridShrubland>
+				<Desert>0.05</Desert>
+				<ExtremeDesert>0.01</ExtremeDesert>
+			</wildBiomes>
+			<gestationPeriodDays>35</gestationPeriodDays>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(2, 1.7)</li>
+					<li>(2.5, 0.7)</li>
+					<li>(3, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeExpectancy>35</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.4</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0.8</minAge>
+					<soundWounded>VAEAF_Cars_Wounded</soundWounded>
+					<soundDeath>VAEAF_Cars_Death</soundDeath>
+					<soundCall>VAEAF_Cars_Call</soundCall>
+
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tradeTags>
+			<li>AnimalUncommon</li>
+		</tradeTags>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VAEAF_CarFamily</defName>
+		<label>family car</label>
+
+		<race>VAEAF_CarFamily</race>
+		<combatPower>135</combatPower>
+		<ecoSystemWeight>0.30</ecoSystemWeight>
+		<wildGroupSize>
+			<min>4</min>
+			<max>8</max>
+		</wildGroupSize>
+
+		<alternateGraphicChance>1</alternateGraphicChance>
+		<alternateGraphics>
+			<li>
+				<color>(25,25,25)</color>
+			</li>
+			<li>
+				<color>(255,255,255)</color>
+			</li>
+			<li>
+				<color>(180,173,150)</color>
+			</li>
+			<li>
+				<color>(44,83,140)</color>
+			</li>
+			<li>
+				<color>(178,72,66)</color>
+			</li>
+		</alternateGraphics>
+		<lifeStages>
+			<li>
+
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarFamily/CarFamily</texPath>
+					<drawSize>1.1</drawSize>
+					<shaderType>CutoutComplex</shaderType>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarFamily/Dessicated_CarFamily</texPath>
+					<drawSize>1.1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarFamily/CarFamily</texPath>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarFamily/Dessicated_CarFamily</texPath>
+					<drawSize>2</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarFamily/CarFamily</texPath>
+					<drawSize>3</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarFamily/Dessicated_CarFamily</texPath>
+					<drawSize>3</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- ======================= Delivery Car =============================== -->
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VAEAF_CarDelivery</defName>
+		<label>delivery truck</label>
+		<description>One of the earliest domesticated vehicles, delivery trucks are a group of extremely dumb herbivores, capable and more than happy to carry packs and burden over long distances..</description>
+		<statBases>
+			<MoveSpeed>4.5</MoveSpeed>
+			<MarketValue>750</MarketValue>
+			<ComfyTemperatureMin>-55</ComfyTemperatureMin>
+			<ComfyTemperatureMax>45</ComfyTemperatureMax>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tools>
+
+			<li>
+				<label>front grille</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>VAEAF_FrontGrilleGroup</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Milkable">
+				<milkDef>Chemfuel</milkDef>
+				<milkIntervalDays>2</milkIntervalDays>
+				<milkAmount>14</milkAmount>
+				<milkFemaleOnly>false</milkFemaleOnly>
+			</li>
+		</comps>
+		<race>
+			<fleshType>VAEAF_CarFlesh</fleshType>
+			<bloodDef>Filth_MachineBits</bloodDef>
+			<body>VAEAF_CarBody</body>
+			<herdAnimal>true</herdAnimal>			
+			<useMeatFrom>VAEAF_CarFamily</useMeatFrom>
+			<baseBodySize>2.5</baseBodySize>
+			<baseHungerRate>0.25</baseHungerRate>
+			<baseHealthScale>2</baseHealthScale>
+			<foodType>VegetarianRoughAnimal</foodType>
+			<leatherDef>VAEAP_Leather_Car</leatherDef>
+			<trainability>Simple</trainability>
+			<wildness>0.6</wildness>			
+			<packAnimal>true</packAnimal>
+			<manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.20</manhunterOnDamageChance>
+			<wildBiomes>
+				<BorealForest>0.07</BorealForest>
+				<IceSheet>0.02</IceSheet>
+				<Tundra>0.05</Tundra>
+				<ColdBog>0.05</ColdBog>
+				<SeaIce>0.01</SeaIce>
+				<TemperateSwamp>0.03</TemperateSwamp>
+				<TropicalSwamp>0.03</TropicalSwamp>
+				<TemperateForest>0.07</TemperateForest>
+				<TropicalRainforest>0.07</TropicalRainforest>
+				<AridShrubland>0.07</AridShrubland>
+				<Desert>0.05</Desert>
+				<ExtremeDesert>0.01</ExtremeDesert>
+			</wildBiomes>
+			<gestationPeriodDays>35</gestationPeriodDays>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(2, 1.7)</li>
+					<li>(2.5, 0.7)</li>
+					<li>(3, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeExpectancy>35</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.4</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0.8</minAge>
+					<soundWounded>VAEAF_Cars_Wounded</soundWounded>
+					<soundDeath>VAEAF_Cars_Death</soundDeath>
+					<soundCall>VAEAF_Cars_Call</soundCall>
+
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tradeTags>
+			<li>AnimalUncommon</li>
+		</tradeTags>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VAEAF_CarDelivery</defName>
+		<label>delivery truck</label>
+
+		<race>VAEAF_CarDelivery</race>
+		<combatPower>140</combatPower>
+		<ecoSystemWeight>0.30</ecoSystemWeight>
+		<wildGroupSize>
+			<min>1</min>
+			<max>3</max>
+		</wildGroupSize>
+
+		<alternateGraphicChance>1</alternateGraphicChance>
+		<alternateGraphics>
+			<li>
+				<color>(25,25,25)</color>
+			</li>
+			<li>
+				<color>(255,255,255)</color>
+			</li>
+			<li>
+				<color>(180,173,150)</color>
+			</li>
+			<li>
+				<color>(44,83,140)</color>
+			</li>
+			<li>
+				<color>(178,72,66)</color>
+			</li>
+		</alternateGraphics>
+		<lifeStages>
+			<li>
+
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarDelivery/CarDelivery</texPath>
+					<drawSize>1.1</drawSize>
+					<shaderType>CutoutComplex</shaderType>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarDelivery/Dessicated_CarDelivery</texPath>
+					<drawSize>1.1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarDelivery/CarDelivery</texPath>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarDelivery/Dessicated_CarDelivery</texPath>
+					<drawSize>2</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarDelivery/CarDelivery</texPath>
+					<drawSize>3</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarDelivery/Dessicated_CarDelivery</texPath>
+					<drawSize>3</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+
+
+
+	<!-- ======================= Vintage Car =============================== -->
+
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VAEAF_CarVintage</defName>
+		<label>vintage car</label>
+		<description>Apex predator of the civilised world, vintage car will stalk it’s prey for miles on end before launching a savage attack.\n\nFeared and revered at the same time, vintage cars are excellent battle animals, albeit highly unreliable as friends and companions.</description>
+		<statBases>
+			<MoveSpeed>5.0</MoveSpeed>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+			<ComfyTemperatureMin>-25</ComfyTemperatureMin>
+			<MarketValue>650</MarketValue>
+		</statBases>
+		<tools>
+			<li>
+				<label>front grille</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>22</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>VAEAF_FrontGrilleGroup</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Milkable">
+				<milkDef>Chemfuel</milkDef>
+				<milkIntervalDays>2</milkIntervalDays>
+				<milkAmount>8</milkAmount>
+				<milkFemaleOnly>false</milkFemaleOnly>
+			</li>
+		</comps>
+		<race>      
+			<body>VAEAF_CarBody</body>
+			<fleshType>VAEAF_CarFlesh</fleshType>
+			<bloodDef>Filth_MachineBits</bloodDef>
+			<useMeatFrom>VAEAF_CarFamily</useMeatFrom>
+
+			<leatherDef>VAEAP_Leather_Car</leatherDef>
+			<herdAnimal>false</herdAnimal>
+			<predator>true</predator>
+			<baseHungerRate>0.3</baseHungerRate>
+			<foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+			<wildness>0.80</wildness>
+			<trainability>Intermediate</trainability>
+			<manhunterOnTameFailChance>0.10</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.50</manhunterOnDamageChance>
+			<gestationPeriodDays>26</gestationPeriodDays>
+			<maxPreyBodySize>2.0</maxPreyBodySize>
+			<baseBodySize>2.5</baseBodySize>
+			<baseHealthScale>2.75</baseHealthScale>     
+			<lifeExpectancy>25</lifeExpectancy>   
+
+			<wildBiomes>
+				<BorealForest>0.07</BorealForest>
+				<IceSheet>0.02</IceSheet>
+				<Tundra>0.05</Tundra>
+				<ColdBog>0.05</ColdBog>
+				<SeaIce>0.01</SeaIce>
+				<TemperateSwamp>0.03</TemperateSwamp>
+				<TropicalSwamp>0.03</TropicalSwamp>
+				<TemperateForest>0.07</TemperateForest>
+				<TropicalRainforest>0.07</TropicalRainforest>
+				<AridShrubland>0.07</AridShrubland>
+				<Desert>0.05</Desert>
+				<ExtremeDesert>0.01</ExtremeDesert>
+			</wildBiomes>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.25</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0.5</minAge>
+					<soundWounded>VAEAF_Cars_Wounded</soundWounded>
+					<soundDeath>VAEAF_Cars_Death</soundDeath>
+					<soundCall>VAEAF_Cars_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VAEAF_CarVintage</defName>
+		<label>vintage car</label>
+		<race>VAEAF_CarVintage</race>
+		<combatPower>250</combatPower>
+		<ecoSystemWeight>0.5</ecoSystemWeight>
+
+
+		<alternateGraphicChance>1</alternateGraphicChance>
+		<alternateGraphics>
+			<li>
+				<color>(25,25,25)</color>
+			</li>
+			<li>
+				<color>(255,255,255)</color>
+			</li>
+			<li>
+				<color>(180,173,150)</color>
+			</li>
+			<li>
+				<color>(44,83,140)</color>
+			</li>
+			<li>
+				<color>(178,72,66)</color>
+			</li>
+		</alternateGraphics>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarVintage/CarVintage</texPath>
+					<drawSize>1.3</drawSize>
+
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarVintage/Dessicated_CarVintage</texPath>
+					<drawSize>1.3</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarVintage/CarVintage</texPath>
+					<drawSize>1.7</drawSize>
+
+					<shadowData>
+						<volume>(0.3, 0.3, 0.3)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarVintage/Dessicated_CarVintage</texPath>
+					<drawSize>1.7</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarVintage/CarVintage</texPath>
+					<drawSize>2.5</drawSize>
+
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.1)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarVintage/Dessicated_CarVintage</texPath>
+					<drawSize>2.5</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- ======================= Pickup Car =============================== -->
+
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VAEAF_CarPickup</defName>
+		<label>pickup truck</label>
+		<description>Pickup trucks are valued companions due to their advanced intelligence. Often used as a colony help, these beasts are capable of hauling large objects as well as assist in battle.</description>
+		<statBases>
+			<MoveSpeed>4.0</MoveSpeed>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+			<ComfyTemperatureMin>-25</ComfyTemperatureMin>
+			<MarketValue>650</MarketValue>
+		</statBases>
+		<tools>
+			<li>
+				<label>front grille</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>VAEAF_FrontGrilleGroup</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Milkable">
+				<milkDef>Chemfuel</milkDef>
+				<milkIntervalDays>2</milkIntervalDays>
+				<milkAmount>8</milkAmount>
+				<milkFemaleOnly>false</milkFemaleOnly>
+			</li>
+		</comps>
+		<race>      
+			<body>VAEAF_CarBody</body>
+			<fleshType>VAEAF_CarFlesh</fleshType>
+			<bloodDef>Filth_MachineBits</bloodDef>
+			<useMeatFrom>VAEAF_CarFamily</useMeatFrom>
+
+			<leatherDef>VAEAP_Leather_Car</leatherDef>
+			<herdAnimal>false</herdAnimal>
+			<predator>true</predator>
+			<baseHungerRate>0.3</baseHungerRate>
+			<foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+			<wildness>0.60</wildness>
+			<trainability>Advanced</trainability>
+			<manhunterOnTameFailChance>0.10</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.10</manhunterOnDamageChance>
+			<gestationPeriodDays>45</gestationPeriodDays>
+			<maxPreyBodySize>1.0</maxPreyBodySize>
+			<baseBodySize>2.5</baseBodySize>
+			<baseHealthScale>2.2</baseHealthScale>     
+			<lifeExpectancy>30</lifeExpectancy>   
+
+			<wildBiomes>
+				<BorealForest>0.07</BorealForest>
+				<IceSheet>0.02</IceSheet>
+				<Tundra>0.05</Tundra>
+				<ColdBog>0.05</ColdBog>
+				<SeaIce>0.01</SeaIce>
+				<TemperateSwamp>0.03</TemperateSwamp>
+				<TropicalSwamp>0.03</TropicalSwamp>
+				<TemperateForest>0.07</TemperateForest>
+				<TropicalRainforest>0.07</TropicalRainforest>
+				<AridShrubland>0.07</AridShrubland>
+				<Desert>0.05</Desert>
+				<ExtremeDesert>0.01</ExtremeDesert>
+			</wildBiomes>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.25</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0.7</minAge>
+					<soundWounded>VAEAF_Cars_Wounded</soundWounded>
+					<soundDeath>VAEAF_Cars_Death</soundDeath>
+					<soundCall>VAEAF_Cars_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VAEAF_CarPickup</defName>
+		<label>pickup truck</label>
+		<race>VAEAF_CarPickup</race>
+		<combatPower>190</combatPower>
+		<ecoSystemWeight>0.3</ecoSystemWeight>
+
+
+		<alternateGraphicChance>1</alternateGraphicChance>
+		<alternateGraphics>
+			<li>
+				<color>(25,25,25)</color>
+			</li>
+			<li>
+				<color>(255,255,255)</color>
+			</li>
+			<li>
+				<color>(180,173,150)</color>
+			</li>
+			<li>
+				<color>(44,83,140)</color>
+			</li>
+			<li>
+				<color>(178,72,66)</color>
+			</li>
+		</alternateGraphics>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarPickup/CarPickup</texPath>
+					<drawSize>1.3</drawSize>
+
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarPickup/Dessicated_CarPickup</texPath>
+					<drawSize>1.3</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarPickup/CarPickup</texPath>
+					<drawSize>2.2</drawSize>
+
+					<shadowData>
+						<volume>(0.3, 0.3, 0.3)</volume>
+						<offset>(0,0,-0.3)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarPickup/Dessicated_CarPickup</texPath>
+					<drawSize>2.2</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarPickup/CarPickup</texPath>
+					<drawSize>3</drawSize>
+
+					<shadowData>
+						<volume>(0.4, 0.4, 0.4)</volume>
+						<offset>(0,0,-0.1)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarPickup/Dessicated_CarPickup</texPath>
+					<drawSize>3</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- ======================= Forklift =============================== -->
+	<ThingDef ParentName="AnimalThingBase">
+		<defName>VAEAF_CarForklift</defName>
+		<label>forklift</label>
+		<description>A peculiar vehicle, forklifts are often seen in large herds, working together to achieve their goal.\n\nThey replicate through a complicated egg laying process, where a female forklift constantly lifts and drops the egg.</description>
+		<statBases>
+			<MoveSpeed>2</MoveSpeed>
+			<MarketValue>550</MarketValue>
+			<ComfyTemperatureMin>-8</ComfyTemperatureMin>
+			<ComfyTemperatureMax>50</ComfyTemperatureMax>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicSensitivity>0</ToxicSensitivity>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tools>
+
+			<li>
+				<label>front grille</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>VAEAF_FrontGrilleGroup</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_EggLayer">
+				<eggUnfertilizedDef>VAEAF_EggForkliftUnfertilized</eggUnfertilizedDef>
+				<eggFertilizedDef>VAEAF_EggForkliftFertilized</eggFertilizedDef>
+				<eggFertilizationCountMax>1</eggFertilizationCountMax>
+				<eggLayIntervalDays>2</eggLayIntervalDays>
+				<eggCountRange>1</eggCountRange>
+			</li>
+			<li Class="CompProperties_Milkable">
+				<milkDef>Chemfuel</milkDef>
+				<milkIntervalDays>1</milkIntervalDays>
+				<milkAmount>5</milkAmount>
+				<milkFemaleOnly>false</milkFemaleOnly>
+			</li>
+		</comps>
+
+		<race>
+			<body>VAEAF_CarBody</body>
+			<herdAnimal>true</herdAnimal>
+			<fleshType>VAEAF_CarFlesh</fleshType>
+			<bloodDef>Filth_MachineBits</bloodDef>
+			<useMeatFrom>VAEAF_CarFamily</useMeatFrom>
+			<baseBodySize>3</baseBodySize>
+			<baseHungerRate>0.1</baseHungerRate>
+			<baseHealthScale>4</baseHealthScale>
+			<foodType>VegetarianRoughAnimal</foodType>
+			<leatherDef>VAEAP_Leather_Car</leatherDef>
+			<trainability>None</trainability>
+			<wildness>0.3</wildness>
+
+			<manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.05</manhunterOnDamageChance>
+			<wildBiomes>
+				<BorealForest>0.07</BorealForest>
+				<IceSheet>0.02</IceSheet>
+				<Tundra>0.05</Tundra>
+				<ColdBog>0.05</ColdBog>
+				<SeaIce>0.01</SeaIce>
+				<TemperateSwamp>0.03</TemperateSwamp>
+				<TropicalSwamp>0.03</TropicalSwamp>
+				<TemperateForest>0.07</TemperateForest>
+				<TropicalRainforest>0.07</TropicalRainforest>
+				<AridShrubland>0.07</AridShrubland>
+				<Desert>0.05</Desert>
+				<ExtremeDesert>0.01</ExtremeDesert>
+
+			</wildBiomes>
+			<gestationPeriodDays>10</gestationPeriodDays>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(2, 1.7)</li>
+					<li>(2.5, 0.7)</li>
+					<li>(3, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeExpectancy>5</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>AnimalBaby</def>
+					<minAge>0</minAge>
+				</li>
+				<li>
+					<def>AnimalJuvenile</def>
+					<minAge>0.2</minAge>
+				</li>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0.4</minAge>
+					<soundWounded>VAEAF_Cars_Wounded</soundWounded>
+					<soundDeath>VAEAF_Cars_Death</soundDeath>
+					<soundCall>VAEAF_Cars_Call</soundCall>
+
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tradeTags>
+			<li>AnimalUncommon</li>
+			<li>AnimalFarm</li>
+		</tradeTags>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>VAEAF_CarForklift</defName>
+		<label>forklift</label>
+
+		<race>VAEAF_CarForklift</race>
+		<combatPower>75</combatPower>
+		<ecoSystemWeight>0.05</ecoSystemWeight>
+		<wildGroupSize>
+			<min>2</min>
+			<max>4</max>
+		</wildGroupSize>
+
+
+		<lifeStages>
+			<li>
+
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarForklift/CarForklift</texPath>
+					<drawSize>1.1</drawSize>
+					<shaderType>CutoutComplex</shaderType>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarForklift/Dessicated_CarForklift</texPath>
+					<drawSize>1.1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarForklift/CarForklift</texPath>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarForklift/Dessicated_CarForklift</texPath>
+					<drawSize>2</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarForklift/CarForklift</texPath>
+					<drawSize>3</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/VAEAF_CarForklift/Dessicated_CarForklift</texPath>
+					<drawSize>3</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+
+</Defs>

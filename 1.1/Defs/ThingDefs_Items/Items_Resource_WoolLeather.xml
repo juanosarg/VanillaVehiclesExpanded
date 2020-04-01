@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+    <!-- ======================= Car leather =============================== -->
+
+	<ThingDef ParentName="LeatherBase">
+		<defName>VAEAP_Leather_Car</defName>
+		<label>car leather</label>
+		<description>Ahhhh yes, nothing better than the smell of a new car.</description>
+		<graphicData>
+			<color>(66,58,58)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>7.0</MarketValue>
+			<StuffPower_Armor_Sharp>1</StuffPower_Armor_Sharp>
+			<StuffPower_Insulation_Heat>22</StuffPower_Insulation_Heat>
+		</statBases>
+		<stuffProps>
+			<color>(66,58,58)</color>
+			<commonality>0</commonality>
+			<statFactors>
+				<MaxHitPoints>1.0</MaxHitPoints>
+				<Beauty>3</Beauty>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
+  
+
+</Defs>

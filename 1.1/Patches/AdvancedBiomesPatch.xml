@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Advanced Biomes</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+
+
+
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarFamily"]/race/wildBiomes</xpath>
+				<value>
+					<PoisonForest>0.05</PoisonForest>
+						<Savanna>0.05</Savanna>
+						<Volcano>0.05</Volcano>
+						<Wasteland>0.05</Wasteland>
+						<Wetland>0.05</Wetland>				
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarDelivery"]/race/wildBiomes</xpath>
+				<value>					
+					<PoisonForest>0.05</PoisonForest>
+						<Savanna>0.05</Savanna>
+						<Volcano>0.05</Volcano>
+						<Wasteland>0.05</Wasteland>
+						<Wetland>0.05</Wetland>		
+				</value>
+			</li>
+
+
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarVintage"]/race/wildBiomes</xpath>
+				<value>
+
+					<PoisonForest>0.05</PoisonForest>
+						<Savanna>0.05</Savanna>
+						<Volcano>0.05</Volcano>
+						<Wasteland>0.05</Wasteland>
+						<Wetland>0.05</Wetland>		
+
+				</value>
+			</li>	
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarPickup"]/race/wildBiomes</xpath>
+				<value>					
+					<PoisonForest>0.05</PoisonForest>
+						<Savanna>0.05</Savanna>
+						<Volcano>0.05</Volcano>
+						<Wasteland>0.05</Wasteland>
+						<Wetland>0.05</Wetland>		
+				</value>
+			</li>		
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarForklift"]/race/wildBiomes</xpath>
+				<value>
+					<PoisonForest>0.05</PoisonForest>
+						<Savanna>0.05</Savanna>
+						<Volcano>0.05</Volcano>
+						<Wasteland>0.05</Wasteland>
+						<Wetland>0.05</Wetland>		
+				</value>
+			</li>			
+			
+
+			
+
+		</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

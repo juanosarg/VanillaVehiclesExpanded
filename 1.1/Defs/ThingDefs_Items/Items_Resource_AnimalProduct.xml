@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=====================================================================-->
+  <!--=============================== Eggs ================================-->
+  <!--=====================================================================-->
+
+
+  <!-- VAEAF_CarForklift -->
+  
+
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>VAEAF_EggForkliftUnfertilized</defName>
+    <label>forklift egg (unfert.)</label>
+    <description>An unfertilized forklift egg. It can be eaten raw, but it's much, much better cooked.</description>
+    <graphicData>
+	<texPath>Things/Item/EggForklift</texPath>
+     
+    </graphicData>
+    <statBases>
+      <MarketValue>7.0</MarketValue>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>VAEAF_EggForkliftFertilized</defName>
+    <label>forklift egg (fert.)</label>
+    <description>A fertilized forklift egg. If all goes well, it should hatch into a forklift. It can be eaten raw, but it's much better cooked.</description>
+    <graphicData>
+      <texPath>Things/Item/EggForklift</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>7.0</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+        <hatcherPawn>VAEAF_CarForklift</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+	
+	
+  
+</Defs>

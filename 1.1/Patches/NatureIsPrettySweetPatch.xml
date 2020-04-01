@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Nature's Pretty Sweet</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+
+
+
+			
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarFamily"]/race/wildBiomes</xpath>
+				<value>
+					<TKKN_Desert>0.05</TKKN_Desert>
+						<TKKN_Oasis>0.05</TKKN_Oasis>
+						<TKKN_RedwoodForest>0.05</TKKN_RedwoodForest>
+						<TKKN_VolcanicFlow>0.05</TKKN_VolcanicFlow>
+						<TKKN_Grasslands>0.05</TKKN_Grasslands>
+						<TKKN_Savanna>0.05</TKKN_Savanna>		
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarDelivery"]/race/wildBiomes</xpath>
+				<value>					
+					<TKKN_Desert>0.05</TKKN_Desert>
+						<TKKN_Oasis>0.05</TKKN_Oasis>
+						<TKKN_RedwoodForest>0.05</TKKN_RedwoodForest>
+						<TKKN_VolcanicFlow>0.05</TKKN_VolcanicFlow>
+						<TKKN_Grasslands>0.05</TKKN_Grasslands>
+						<TKKN_Savanna>0.05</TKKN_Savanna>			
+				</value>
+			</li>
+
+
+
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarVintage"]/race/wildBiomes</xpath>
+				<value>
+
+					<TKKN_Desert>0.05</TKKN_Desert>
+						<TKKN_Oasis>0.05</TKKN_Oasis>
+						<TKKN_RedwoodForest>0.05</TKKN_RedwoodForest>
+						<TKKN_VolcanicFlow>0.05</TKKN_VolcanicFlow>
+						<TKKN_Grasslands>0.05</TKKN_Grasslands>
+						<TKKN_Savanna>0.05</TKKN_Savanna>			
+
+				</value>
+			</li>	
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarPickup"]/race/wildBiomes</xpath>
+				<value>					
+					<TKKN_Desert>0.05</TKKN_Desert>
+						<TKKN_Oasis>0.05</TKKN_Oasis>
+						<TKKN_RedwoodForest>0.05</TKKN_RedwoodForest>
+						<TKKN_VolcanicFlow>0.05</TKKN_VolcanicFlow>
+						<TKKN_Grasslands>0.05</TKKN_Grasslands>
+						<TKKN_Savanna>0.05</TKKN_Savanna>		
+				</value>
+			</li>		
+			<li Class="PatchOperationAdd"> 
+				<xpath>/Defs/ThingDef[defName="VAEAF_CarForklift"]/race/wildBiomes</xpath>
+				<value>
+					<TKKN_Desert>0.05</TKKN_Desert>
+						<TKKN_Oasis>0.05</TKKN_Oasis>
+						<TKKN_RedwoodForest>0.05</TKKN_RedwoodForest>
+						<TKKN_VolcanicFlow>0.05</TKKN_VolcanicFlow>
+						<TKKN_Grasslands>0.05</TKKN_Grasslands>
+						<TKKN_Savanna>0.05</TKKN_Savanna>		
+				</value>
+			</li>	
+			
+			
+		</operations>
+		</match>
+	</Operation>
+
+
+</Patch>
+

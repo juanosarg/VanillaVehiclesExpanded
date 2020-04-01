@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartGroupDef>
+    <defName>VAEAF_FrontGrilleGroup</defName>
+    <label>front grille</label>
+    <labelShort>front grille</labelShort>
+  </BodyPartGroupDef>
+  
+
+
+</Defs>

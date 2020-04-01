@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--===================== Misc =====================-->
+
+
+	<BodyPartDef>
+		<defName>VAEAF_Wheel</defName>
+		<label>car wheel</label>
+		<hitPoints>20</hitPoints>
+		<frostbiteVulnerability>5</frostbiteVulnerability>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+
+
+	<BodyPartDef Abstract="True" Name="VAEAF_Chassis">
+		<labelShort>chassis</labelShort>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="VAEAF_Chassis">
+		<defName>VAEAF_ChassisFrontal</defName>
+		<label>frontal chassis</label>
+		<hitPoints>45</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="VAEAF_Chassis">
+		<defName>VAEAF_ChassisCentral</defName>
+		<label>central chassis</label>
+		<hitPoints>40</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="VAEAF_Chassis">
+		<defName>VAEAF_ChassisRear</defName>
+		<label>rear chassis</label>
+		<hitPoints>35</hitPoints>
+	</BodyPartDef>
+	
+	
+	  <BodyPartDef>
+    <defName>VAEAF_FrontGrille</defName>
+    <label>front grille</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <bleedRate>0</bleedRate>
+    <alive>false</alive>
+    <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+      <li>TalkingPathway</li>
+    </tags>
+  </BodyPartDef>
+
+ 
+
+  <BodyPartDef>
+    <defName>VAEAF_OnBoardComputer</defName>
+    <label>on-board computer</label>
+    <hitPoints>10</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>ConsciousnessSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>VAEAF_Motor</defName>
+    <label>motor</label>
+    <hitPoints>20</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>BloodPumpingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>VAEAF_FuelTank</defName>
+    <label>fuel tank</label>
+    <hitPoints>15</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>BloodFiltrationSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>VAEAF_FrontLights</defName>
+    <label>front lights</label>
+    <hitPoints>10</hitPoints>
+    <frostbiteVulnerability>2</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <socketed>true</socketed>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>SightSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>VAEAF_Radio</defName>
+    <label>radio</label>
+    <hitPoints>10</hitPoints>
+    <frostbiteVulnerability>2</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>VAEAF_Alarm</defName>
+    <label>alarm</label>
+    <hitPoints>10</hitPoints>
+    <frostbiteVulnerability>2</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
+
+	
+
+</Defs>
